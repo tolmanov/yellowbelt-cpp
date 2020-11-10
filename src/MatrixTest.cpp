@@ -9,7 +9,10 @@ namespace {
     };
     TEST_F(MTest, BordersCheck) {
 
-        ASSERT_ANY_THROW(m.At(66,0));
+        ASSERT_ANY_THROW(m.At(-1,0));
+        ASSERT_ANY_THROW(m.At(3,3));
+        ASSERT_ANY_THROW(m.At(2,4));
+        ASSERT_ANY_THROW(m.At(0,-1));
         ASSERT_ANY_THROW(n+p);
         ASSERT_TRUE((m+n).At(2,3) == 0);
         ASSERT_TRUE(m == n);
